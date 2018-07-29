@@ -23,6 +23,26 @@ public class LinkedList {
         }
     }
 
+    public void addTail(Object data){
+        Node copy = head;
+        while (copy.next != null){
+            copy = copy.next;
+        }
+
+        copy.next = new Node(data);
+        size++;
+    }
+
+    public Object find(int index){
+
+        Node copy = head;
+        for(int i = 0; i<index; i++){
+            copy = copy.next;
+        }
+        return copy.getData();
+
+    }
+
 
     class Node{
 
@@ -36,6 +56,7 @@ public class LinkedList {
         public Object getData(){
             return this.data;
         }
+
 
     }
 }
